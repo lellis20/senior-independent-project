@@ -1,0 +1,24 @@
+{% extends "front.html" %}
+
+{% block title %}
+	Login
+{% endblock %}
+
+{% block main %}
+	<div class="twelve columns" style="height: 100px"></div>
+	<div class="four columns loginspacer"></div>
+	<div class="four columns intro"><h3>Login</h3></div>
+	<div class="four columns loginspacer"></div>
+	<div class="four columns" style="text-align: center">
+		<form method="POST">
+			{{formFields.username(class="loginfield", placeholder="Username", autocomplete="off")}}
+			{{formFields.password(class="loginfield", placeholder="Password", type="password")}}
+			{{formFields.submitButton(id="loginButton")}}
+		</form>
+	</div>
+{% endblock %}
+
+
+		<!-- <input class="loginfield" type="text" name="username" placeholder="Username" autocomplete="off">
+		<input class="loginfield" type="password" name="password" placeholder="Password">
+		<button id="loginButton" type="submit">Login</button> -->

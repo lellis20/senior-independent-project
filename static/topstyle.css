@@ -1,0 +1,72 @@
+/* color theme
+HEX
+#
+#f1f1f1 - secondary white
+#68c02f - fade color 2
+#bfff96 - fade color
+#6eee21 - main font
+#ffffff - white
+#2a2a2a - bg
+*/
+
+body 
+{
+	height: 100%;
+	background-color: #2a2a2a;
+
+}
+.intro 
+{
+	color: #6eee21;
+	text-align: center;
+}
+#login
+{
+	color: #6eee21;
+	text-align: center;
+	transition: 0.7s;
+}
+#login:hover
+{
+	color: #ffffff;
+}
+
+#spacer
+{
+	height: 5px;
+}
+#button1
+{
+	color: #6eee21;
+	text-align: center;
+	border-style: solid;
+	border-color: #6eee21;
+	transition: 0.7s;
+}
+#button1:hover
+{
+	color: #ffffff;
+	background: #68c02f;
+}
+.spacer
+{
+	height: 5px;
+}
+.loginfield
+{
+	width: 58%;
+	color: #6eee21;
+	border-style: solid;
+	border-color: #68c02f;
+	border-width: 3px;
+	background-color: #2a2a2a;
+}
+.loginspacer
+{
+	height: 60px;
+}
+#loginButton
+{
+	width: 58%;
+}
+

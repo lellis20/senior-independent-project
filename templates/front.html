@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greatest game: {% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="/static/topstyle.css">
+	<link rel="stylesheet" type="text/css" href="/static/skeleton.css">
+</head>
+<body>
+	{% block main %}
+		<div class="ten columns" id="spacer"></div>
+		<a href="/login" id="login" class="two columns">Login</a>
+		<h2 class="intro">Welcome to game!</h2>
+		<div class="four columns spacer"></div>
+		<a href="/game">
+			<div class="four columns" id="button1">
+			Play as Audience Member
+			</div>
+		</a>
+		<div class="four columns spacer"></div>
+	{% endblock %}
+</body>
+</html>
