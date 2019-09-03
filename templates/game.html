@@ -5,6 +5,33 @@
 {% endblock %}
 
 {% block main %}
-<h1>THis is audience game page</h1>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var socket = io.connect('localhost:5000');
+		socket.on('connect', function() {
+			socket.send('User has connected!');
+		});
+		socket.on('message', function(msg) {
+			$("#messageBox").append('<li>'+msg+'</li>');
+			console.log('Received message');
+		});
+		$('#sendButton').on('click', function() {
+			socket.send($('#message').val());
+			$('#message').val('');
+		});
+	});
+</script>
+<div class="twelve columns staticTitle">Game Night</div>
+
+<div>
+	<!--
+	Web Socket question
+	2 or 3 web socket buttons
+	-->
+	<input type="text" id="message">
+	<button id="sendButton">Send</button>
+	<ul id="messageBox"></ul>
+</div> 
+
 
 {% endblock %}

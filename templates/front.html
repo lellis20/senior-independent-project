@@ -4,9 +4,12 @@
 	<title>Greatest game: {% block title %}{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="/static/topstyle.css">
 	<link rel="stylesheet" type="text/css" href="/static/skeleton.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
 	{% block main %}
+	
 		<div class="ten columns" id="spacer"></div>
 		<a href="/login" id="login" class="two columns">Login</a>
 		<h2 class="intro">Welcome to game!</h2>
