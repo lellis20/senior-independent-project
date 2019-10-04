@@ -1,0 +1,44 @@
+/* color theme
+HEX
+#
+#f1f1f1 - secondary white
+#68c02f - fade color 2
+#bfff96 - fade color
+#6eee21 - main font
+#ffffff - white
+#2a2a2a - bg
+*/
+
+
+body {
+	background-color: #2a2a2a;
+}
+
+#header1 {
+	font-family: Courier;
+	font-size: 100px;
+	color: #6eee21;
+	text-align: center;
+	height: 500px;
+}
+#chat {
+	font-family: Courier;
+	color: #68c02f;
+}
+
+#chat-container {
+	height: 250px;
+	margin: 0px 0px 0px 0px;
+}
+
+#stats-container {
+	height: 250px;
+	background-color: red;
+	margin: 0px 0px 0px 0px;
+}
+
+#feed-container {
+	height: 250px;
+	background-color: blue;
+	margin: 0px 0px 0px 0px;
+}
