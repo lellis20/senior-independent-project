@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Admin Control Panel</h1>
+	<br>
+
+	<h2>Screen Controls</h2>
+		<h4>Main Question</h4>
+			<input type="text" id="question">
+			<button id="firstButton">Send</button>
+			<button id="questionToggle">Toggle Question</button>
+		<br>
+		<h4>Mod Chat</h4>
+			<input type="text" id="modChat">
+			<button id="modSend">Send</button>
+	<h2>Audience Controls</h2>
+		<h4>Voting</h4>
+			<input type="text" id="choice1" placeholder="choice1">
+			<input type="text" id="choice2" placeholder="choice2">
+			<button id="sendChoices">Send</button>
+			<p id="name1">Choice 1: </p><p id="ch1Votes"></p>
+			<p id="name2">Choice 2: </p><p id="ch2Votes"></p>
+
+	<br>
+	<h2>MASTER Controls</h2>
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/admin.js"></script>
+</body>
+</html>
