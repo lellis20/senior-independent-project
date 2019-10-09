@@ -1,3 +1,3 @@
 # senior-independent-project
 A polling web app for a live audience.
-Uses flask, skeleton.css
+Uses node.js, socket.io, html, css, skeleton.css, javascript, jquery
