@@ -30,13 +30,17 @@ $("#modSend").click(function(){
 $("#sendChoices").click(function(){
 	name1 = $("#choice1").val();
 	name2 = $("#choice2").val();
-	socket.emit('sendChoices', name1, name2);
+	name3 = $("#choice3").val();
+	socket.emit('sendChoices', name1, name2, name3);
 	$("#choice1").val('');
 	$("#choice2").val('');
+	$("#choice3").val('');
 	$("#name1").html(name1 + ": ");
 	$("#name2").html(name2 + ": ");
+	$("#name3").html(name3 + ": ");
 	$("#ch1Votes").html("0");
 	$("#ch2Votes").html("0");
+	$("#ch3Votes").html("0");
 });
 
 socket.on('vCounter1', function(ch1Votes){
@@ -44,4 +48,7 @@ socket.on('vCounter1', function(ch1Votes){
 });
 socket.on('vCounter2', function(ch2Votes){
 	$("#ch2Votes").html(ch2Votes);
+});
+socket.on('vCounter3', function(ch3Votes){
+	$("#ch3Votes").html(ch3Votes);
 });
