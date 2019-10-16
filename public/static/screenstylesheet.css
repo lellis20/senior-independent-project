@@ -12,6 +12,7 @@ HEX
 
 body {
 	background-color: #0B0B0B;
+	margin: 0px;
 }
 
 #header1 {
@@ -36,12 +37,34 @@ body {
 
 #stats-container {
 	height: 250px;
-	background-color: red;
 	margin: 0px 0px 0px 0px;
 }
 
 #feed-container {
 	height: 250px;
-	background-color: blue;
 	margin: 0px 0px 0px 0px;
 }
+#curViews {
+	font-size: 50px;
+	color: #5be8f0;
+	width: 100%;
+	text-align: center;
+}
+.viewerCt {
+	width: 100%;
+	font-size: 30px;
+	color: #5be8f0;
+	text-align: center;
+}
+
+#resultHeader {
+	width: 50%;
+	text-align: center;
+	color: #faff61;
+	font-size: 40px;
+}
+
+
+
+
+

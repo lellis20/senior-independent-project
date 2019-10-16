@@ -9,14 +9,20 @@
 <body>
 	<div id="header1" class="twelve columns"></div>
 	<div id="chat-container" class="four columns">
-		<p style="font-size: 40px; font-family: Courier; color: #6eee21; padding-left: 10px; text-shadow: 2px 2px #68c02f;">Chat</p>
+		<p style="font-size: 40px; font-family: Courier; color: #6eee21; padding-left: 10px; text-shadow: 2px 2px #68c02f; text-align: center;">Chat</p>
 		<ul id="chat"></ul>
 	</div>
 	<div id="stats-container" class="four columns">
-		
+		<div class="viewerCt">Current Viewers:</div>
+		<div id="curViews"></div>
+		<!--
+		<div id="voteResults">
+			<h3 id="resultHeader">Results:</h3>
+			<div id="resultTarget"></div>
+		</div> -->
 	</div>
 	<div id="feed-container" class="four columns">
-		
+		<p style="font-size: 40px; font-family: Courier; color: #ff4d4d; padding-left: 10px; text-shadow: 2px 2px #68c02f; text-align: center;">Stream Events</p>
 	</div>
 
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>

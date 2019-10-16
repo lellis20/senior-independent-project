@@ -1,4 +1,7 @@
+//Full screen bookmarklet: javascript:document.body.webkitRequestFullScreen();
+
 let socket = io();
+
 
 socket.on('connection', function(){
 	console.log("connected to server");
@@ -20,4 +23,8 @@ socket.on('pushMessage', function(msg, who) {
 	}
 	$("#chat").append("<li>" + who + ": " + msg + "</li>");
 });
+
+socket.on('viewerUpdate', function(num){
+	$("#curViews").html(num);
+})
 
