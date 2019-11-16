@@ -3,13 +3,23 @@
 <head>
 	<title>Game Night!</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/screen.js"></script>
+	<!-- d3 Liquid Gauge Libraries -->
+	<script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+	<script src="/js/liquidFillGauge.js" language="JavaScript"></script>
+	<!-- Styling -->
 	<link rel="stylesheet" type="text/css" href="static/screenstylesheet.css">
 	<link rel="stylesheet" type="text/css" href="static/skeleton.css">
 </head>
 <body>
-	<div id="header1" class="twelve columns"></div>
+	<div id="header1" class="twelve columns">
+		<svg class="resultBubble" id="publish1" width="400" height="400" onclick="person1.update(NewValue());"></svg>
+		<svg class="resultBubble" id="publish2" width="400" height="400"></svg>
+		<svg class="resultBubble" id="publish3" width="400" height="400"></svg>
+	</div>
 	<div id="chat-container" class="four columns">
-		<p style="font-size: 40px; font-family: Courier; color: #6eee21; padding-left: 10px; text-shadow: 2px 2px #68c02f; text-align: center;">Chat</p>
+		<p style="font-size: 40px; font-family: Courier; color: #6eee21; padding-left: 10px; text-shadow: 2px 2px #68c02f;text-align: center;">Chat</p>
 		<ul id="chat"></ul>
 	</div>
 	<div id="stats-container" class="four columns">
@@ -25,7 +35,5 @@
 		<p style="font-size: 40px; font-family: Courier; color: #ff4d4d; padding-left: 10px; text-shadow: 2px 2px #68c02f; text-align: center;">Stream Events</p>
 	</div>
 
-	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="/js/screen.js"></script>
 </body>
 </html>

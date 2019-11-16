@@ -23,3 +23,7 @@ body {
 	color: red;
 	border-color: red;
 }
+#logo {
+	width: 50%;
+	margin-left: 25%;
+}

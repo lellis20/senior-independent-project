@@ -27,7 +27,7 @@ $("#modSend").click(function(){
 
 
 // Voting
-$("#sendChoices").click(function(){
+$("#openPoll").click(function(){
 	name1 = $("#choice1").val();
 	name2 = $("#choice2").val();
 	name3 = $("#choice3").val();
@@ -42,6 +42,12 @@ $("#sendChoices").click(function(){
 	$("#ch2Votes").html("0");
 	$("#ch3Votes").html("0");
 });
+$("#closePoll").click(function(){
+	socket.emit('closePoll');
+})
+$("#showResults").click(function(){
+	socket.emit('showResults');
+})
 
 socket.on('vCounter1', function(ch1Votes){
 	$("#ch1Votes").html(ch1Votes);
