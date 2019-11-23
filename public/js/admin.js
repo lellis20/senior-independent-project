@@ -48,6 +48,9 @@ $("#closePoll").click(function(){
 $("#showResults").click(function(){
 	socket.emit('showResults');
 })
+$("#hideResults").click(function(){
+	socket.emit('hideResults');
+})
 
 socket.on('vCounter1', function(ch1Votes){
 	$("#ch1Votes").html(ch1Votes);

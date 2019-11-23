@@ -63,7 +63,10 @@ io.on('connection', function(socket) {
 		ch1Votes = ch1Votes / total * 100;
 		ch2Votes = ch2Votes / total * 100;
 		ch3Votes = ch3Votes / total * 100;
-		socket.broadcast.emit('publishResults', ch1Votes, ch2Votes, ch3Votes);
+		socket.broadcast.emit('publishResults', Math.trunc(ch1Votes), Math.trunc(ch2Votes), Math.trunc(ch3Votes));
+	})
+	socket.on('hideResults', function(){
+		socket.broadcast.emit('hideResultCommand');
 	})
 
 	// Vote counters

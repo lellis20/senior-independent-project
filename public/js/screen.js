@@ -2,6 +2,8 @@
 
 let socket = io();
 
+var waveColorVal = "#9C0101";
+
 $(document).ready(function(){
 	$(".resultBubble").hide();
 })
@@ -11,7 +13,7 @@ socket.on('connection', function(){
 });
 
 socket.on('screenSend', function(msg){
-	$("#header1").html(msg);
+	$("#header2").html(msg);
 	$("#header1").show();
 });
 
@@ -33,11 +35,12 @@ socket.on('viewerUpdate', function(num){
 
 socket.on('publishResults', function(p1, p2, p3){
 	if (p3 == 0) {
+		$(".resultBubble").html("");
 		$("#publish1").show();
 		$("#publish2").show();
 		var p1config = liquidFillGaugeDefaultSettings();
 		p1config.circleColor = "#FF0000";
-		p1config.waveColor = "#FF0000";
+		p1config.waveColor = waveColorVal;
 		p1config.textColor = "#FFF33C";
 		p1config.circleThickness = 0.2;
 		p1config.textVertPosition = 0.2;
@@ -46,7 +49,7 @@ socket.on('publishResults', function(p1, p2, p3){
 
 		var p2config = liquidFillGaugeDefaultSettings();
 		p2config.circleColor = "#FF0000";
-		p2config.waveColor = "#FF0000";
+		p2config.waveColor = waveColorVal;
 		p2config.textColor = "#FFF33C";
 		p2config.circleThickness = 0.2;
 		p2config.textVertPosition = 0.2;
@@ -54,10 +57,11 @@ socket.on('publishResults', function(p1, p2, p3){
 		var person2 = loadLiquidFillGauge("publish2", p2, p2config);
 	}
 	else {
+		$(".resultBubble").html("");
 		$(".resultBubble").show();
 		var p1config = liquidFillGaugeDefaultSettings();
 		p1config.circleColor = "#FF0000";
-		p1config.waveColor = "#FF0000";
+		p1config.waveColor = waveColorVal;
 		p1config.textColor = "#FFF33C";
 		p1config.circleThickness = 0.2;
 		p1config.textVertPosition = 0.2;
@@ -66,7 +70,7 @@ socket.on('publishResults', function(p1, p2, p3){
 		
 		var p2config = liquidFillGaugeDefaultSettings();
 		p2config.circleColor = "#FF0000";
-		p2config.waveColor = "#FF0000";
+		p2config.waveColor = waveColorVal;
 		p2config.textColor = "#FFF33C";
 		p2config.circleThickness = 0.2;
 		p2config.textVertPosition = 0.2;
@@ -75,17 +79,15 @@ socket.on('publishResults', function(p1, p2, p3){
 
 		var p3config = liquidFillGaugeDefaultSettings();
 		p3config.circleColor = "#FF0000";
-		p3config.waveColor = "#FF0000";
+		p3config.waveColor = waveColorVal;
 		p3config.textColor = "#FFF33C";
 		p3config.circleThickness = 0.2;
 		p3config.textVertPosition = 0.2;
 		p3config.waveAnimateTime = 960;
 		var person3 = loadLiquidFillGauge("publish3", p3, p3config);
 	}
-	
-	
 })
-socket.on('hideResults', function(){
+socket.on('hideResultCommand', function(){
 	$(".resultBubble").hide();
 })
 
