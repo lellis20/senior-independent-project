@@ -4,9 +4,18 @@ let socket = io();
 
 var waveColorVal = "#9C0101";
 
+var stalkerLinks = ["", // Default
+					"https://media.giphy.com/media/gHbjrjwDA20z7MWarn/giphy.gif", // TheoMain YuiATM
+					"https://media.giphy.com/media/St9Gty9yIA8HEbbgZ0/giphy.gif", // BenMain
+					"blank", // SamMain
+					"https://media.giphy.com/media/jpuay2nynuLgBXr1Nb/giphy.gif", // MaryMain
+					"https://media.giphy.com/media/XGVdSMd5SbhLNcVUHC/giphy.gif" //CalvinMain
+					]
+
 $(document).ready(function(){
 	$(".resultBubble").hide();
-})
+	$(".resultBox").hide();
+});
 
 socket.on('connection', function(){
 	console.log("connected to server");
@@ -18,7 +27,7 @@ socket.on('screenSend', function(msg){
 });
 
 socket.on('qToggle', function(){
-	$("#header1").toggle();
+	$("#header1").slideToggle();
 });
 
 socket.on('pushMessage', function(msg, who) {
@@ -31,11 +40,17 @@ socket.on('pushMessage', function(msg, who) {
 
 socket.on('viewerUpdate', function(num){
 	$("#curViews").html(num);
-})
+});
 
-socket.on('publishResults', function(p1, p2, p3){
+socket.on('publishResults', function(p1, p2, p3, ch1, ch2, ch3){
 	if (p3 == 0) {
 		$(".resultBubble").html("");
+		$("#result1").html(ch1);
+		$("#result2").html(ch2);
+		$("#result1").attr("class", "resultBox six columns");
+		$("#result2").attr("class", "resultBox six columns");
+		$("#result1").show();
+		$("#result2").show();
 		$("#publish1").show();
 		$("#publish2").show();
 		var p1config = liquidFillGaugeDefaultSettings();
@@ -58,6 +73,13 @@ socket.on('publishResults', function(p1, p2, p3){
 	}
 	else {
 		$(".resultBubble").html("");
+		$("#result1").html(ch1);
+		$("#result2").html(ch2);
+		$("#result3").html(ch3);
+		$("#result1").attr("class", "resultBox four columns");
+		$("#result2").attr("class", "resultBox four columns");
+		$("#result3").attr("class", "resultBox four columns");
+		$(".resultBox").show();
 		$(".resultBubble").show();
 		var p1config = liquidFillGaugeDefaultSettings();
 		p1config.circleColor = "#FF0000";
@@ -86,8 +108,14 @@ socket.on('publishResults', function(p1, p2, p3){
 		p3config.waveAnimateTime = 960;
 		var person3 = loadLiquidFillGauge("publish3", p3, p3config);
 	}
-})
+});
 socket.on('hideResultCommand', function(){
 	$(".resultBubble").hide();
-})
+	$(".resultBox").hide();
+	$(".resultBox").html("");
+});
+
+socket.on('stalkerPush', function(imgNum){
+	$(".stalkerBox").attr("src", stalkerLinks[imgNum])
+});
 

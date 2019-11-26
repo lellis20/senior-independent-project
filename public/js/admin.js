@@ -61,3 +61,13 @@ socket.on('vCounter2', function(ch2Votes){
 socket.on('vCounter3', function(ch3Votes){
 	$("#ch3Votes").html(ch3Votes);
 });
+
+$("#submitStalker").click(function(){
+	var toSend = $("#stalkerPicMenu").val();
+	socket.emit('stalkerSend', toSend);
+});
+
+$("#hideStalker").click(function(){
+	socket.emit('stalkerSend', 0);
+})
+

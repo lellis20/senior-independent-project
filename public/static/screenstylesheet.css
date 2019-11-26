@@ -23,6 +23,14 @@ body {
 	height: 500px;
 	text-shadow: 5px 5px #bfff96;
 }
+
+.resultBox {
+	margin: 0px 0px 0px 0px;
+	font-size: 70px;
+	color: #ff0000;
+	text-shadow: 0px 0px;
+}
+
 #chat {
 	font-family: Courier;
 	color: #68c02f;
@@ -31,17 +39,18 @@ body {
 }
 
 #chat-container {
-	height: 250px;
+	height: 480px;
 	margin: 0px 0px 0px 0px;
+	overflow: scroll;
 }
 
 #stats-container {
-	height: 250px;
+	height: 480px;
 	margin: 0px 0px 0px 0px;
 }
 
 #feed-container {
-	height: 250px;
+	height: 480px;
 	margin: 0px 0px 0px 0px;
 }
 #curViews {
@@ -64,6 +73,12 @@ body {
 	font-size: 40px;
 }
 
+.stalkerBox {
+	height: 570px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 

@@ -63,7 +63,8 @@ io.on('connection', function(socket) {
 		ch1Votes = ch1Votes / total * 100;
 		ch2Votes = ch2Votes / total * 100;
 		ch3Votes = ch3Votes / total * 100;
-		socket.broadcast.emit('publishResults', Math.trunc(ch1Votes), Math.trunc(ch2Votes), Math.trunc(ch3Votes));
+
+		socket.broadcast.emit('publishResults', Math.trunc(ch1Votes), Math.trunc(ch2Votes), Math.trunc(ch3Votes), choice1, choice2, choice3);
 	})
 	socket.on('hideResults', function(){
 		socket.broadcast.emit('hideResultCommand');
@@ -89,6 +90,15 @@ io.on('connection', function(socket) {
 			socket.broadcast.emit('pushMessage', msg, who);
 			console.log("CHAT: " + who + ": " + msg);
 	});
+
+
+	// Stalker Footage Stuff
+	socket.on('stalkerSend', function(img){
+		console.log("Posting picture/gif: " + img);
+		socket.broadcast.emit('stalkerPush', img);
+	});
+
+
 
 
 	socket.on('disconnect', function(){
