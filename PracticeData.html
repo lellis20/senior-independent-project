@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://d3js.org/d3.v3.min.js" language="JavaScript">
+	</script>
+	<script src="/js/liquidFillGauge.js" language="JavaScript"></script>
+</head>
+<body>
+	<svg id="fillgauge1" width="97%" height="250" onclick="gauge1.update(NewValue());"></svg>
+	<script language="JavaScript">
+		var gauge1 = loadLiquidFillGauge("fillgauge1", 80);
+	    var config1 = liquidFillGaugeDefaultSettings();
+	    config1.circleColor = "#FF7777";
+	    config1.textColor = "#FF4444";
+	    config1.waveTextColor = "#FFAAAA";
+	    config1.waveColor = "#FFDDDD";
+	    config1.circleThickness = 0.2;
+	    config1.textVertPosition = 0.2;
+	    config1.waveAnimateTime = 1000;
+	</script>
+
+</body>
+</html>

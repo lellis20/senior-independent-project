@@ -1,0 +1,29 @@
+body {
+	background-color: #2a2a2a;
+}
+#header1 {
+	color: #6eee21;
+	font-family: Courier;
+	text-align: center;
+	font-size: 900%;
+}
+#chatBox {
+	margin-top: 100px;
+	height: 200px;
+	font-size: 500%;
+	text-align: center;
+}
+#sendChat {
+	height: 200px;
+	font-size: 100px;
+}
+.opt-button {
+	height: 200px;
+	font-size: 150px;
+	color: red;
+	border-color: red;
+}
+#logo {
+	width: 50%;
+	margin-left: 25%;
+}
