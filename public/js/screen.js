@@ -29,12 +29,12 @@ function spoofIP(){
 function ping(){
 	var curPing = Math.floor(Math.random() * 61) + 40;
 	$("#pingBox").html("Server Ping: " + curPing);
-}
+};
 function viewers(){
 	var changes = Math.floor(Math.random() * 20) - 7;
 	viewerStart += changes;
 	$("#viewerBox").html("Online Viewers: " + viewerStart);
-}
+};
 
 $(document).ready(function(){
 	$(".resultBubble").hide();
@@ -98,8 +98,8 @@ socket.on('publishResults', function(p1, p2, p3, ch1, ch2, ch3){
 		$(".resultBubble").html("");
 		$("#result1").html(ch1);
 		$("#result2").html(ch2);
-		$("#result1").attr("class", "resultBox six columns");
-		$("#result2").attr("class", "resultBox six columns");
+		$(".resultBox").attr("class", "resultBox six columns");
+		//$("#result2").attr("class", "resultBox six columns");
 		$("#result1").show();
 		$("#result2").show();
 		$("#publish1").attr("class", "resultBubble six columns");
@@ -130,9 +130,10 @@ socket.on('publishResults', function(p1, p2, p3, ch1, ch2, ch3){
 		$("#result1").html(ch1);
 		$("#result2").html(ch2);
 		$("#result3").html(ch3);
-		$("#result1").attr("class", "resultBox four columns");
-		$("#result2").attr("class", "resultBox four columns");
-		$("#result3").attr("class", "resultBox four columns");
+		$(".resultBox").attr("class", "resultBox four columns");
+		//$("#result2").attr("class", "resultBox four columns");
+		//$("#result3").attr("class", "resultBox four columns");
+		$(".resultBubble").attr("class", "resultBubble four columns");
 		$(".resultBox").show();
 		$(".resultBubble").show();
 		var p1config = liquidFillGaugeDefaultSettings();
