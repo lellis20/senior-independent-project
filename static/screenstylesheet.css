@@ -43,7 +43,7 @@ body {
 	margin-left: 5px;
 	font-family: Courier;
 	color: #8af542;
-	font-size: 30px;
+	font-size: 35px;
 	text-shadow: none;
 }
 .anonmarked {
@@ -55,7 +55,7 @@ body {
 	margin-left: 5px;
 	font-family: Courier;
 	color: #ff7a33;
-	font-size: 30px;
+	font-size: 35px;
 	text-shadow: none;
 }
 .MODmarked {
@@ -107,10 +107,67 @@ body {
 .streamStats {
 	width: 100%;
 	color: #00eeff;
+	font-size: 30px;
 	text-align: center;
 	font-family: Courier;
 }
 
+.feedMessage {
+	list-style-type: none;
+	font-size: 30px;
+	font-family: Courier;
+}
+#donationCtr {
+	color: #00ff3c;
+	text-align: center;
+	font-size: 25px;
+}
+
+.event1 {
+	color: #ffffff;
+}
+.event2 {
+	color: #acffa3;
+}
+.event3 {
+	color: #ffecc4;
+}
+.event4 {
+	color: #ffe2a6;
+}
+.event5 {
+	color: #c9a3ff;
+}
+.event6 {
+	color: #ffc95c;
+}
+.event7 {
+	color: #ffd15e;
+}
+.event8 {
+	color: #c9a3ff;
+}
+.event9 {
+	color: #c9a3ff;
+}
+.event10 {
+	color: #c9a3ff;
+}
+.event11 {
+	color: #d47b00;
+}
+.event12 {
+	color: #d47b00;
+}
+.event13 {
+	color: #26ff47;
+}
+.event14 {
+	color: #ff1414;
+}
+.event15 {
+	color: #ffecc4;
+}
 
 
 

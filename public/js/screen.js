@@ -5,13 +5,15 @@ let socket = io();
 var waveColorVal = "#9C0101";
 var updateStats = false;
 var viewerStart = 14000;
+var donationsRaised = 0;
 
 var stalkerLinks = ["", // Default
 					"https://media.giphy.com/media/gHbjrjwDA20z7MWarn/giphy.gif", // TheoMain YuiATM
 					"https://media.giphy.com/media/St9Gty9yIA8HEbbgZ0/giphy.gif", // BenMain
-					"blank", // SamMain
+					"https://media.giphy.com/media/jqeqUuREGsjr1ocwPU/giphy.gif", // SamMain
 					"https://media.giphy.com/media/jpuay2nynuLgBXr1Nb/giphy.gif", // MaryMain
-					"https://media.giphy.com/media/XGVdSMd5SbhLNcVUHC/giphy.gif" //CalvinMain
+					"https://media.giphy.com/media/XGVdSMd5SbhLNcVUHC/giphy.gif", //CalvinMain
+					"https://media.giphy.com/media/JOWeCyNUtp3qnn2WNB/giphy.gif" // Theo Ember Main
 					]
 
 function spoofIP(){
@@ -35,6 +37,72 @@ function viewers(){
 	viewerStart += changes;
 	$("#viewerBox").html("Online Viewers: " + viewerStart);
 };
+function streamEvent(){
+	var eventMsg = "";
+	var optNum = Math.floor(Math.random() * 16) + 1;
+	// Make donations BTC?
+	switch (optNum) {
+		case 1:
+			eventMsg = "[username] just subscribed!";
+			break;
+		case 2:
+			var amount = Math.floor(Math.random() * 50) + 1;
+			eventMsg = "[username] donated $" + amount + "!";
+			donationsRaised += amount;
+			break;
+		case 3:
+			eventMsg = "GoodGuyBlocker™ prevented another CIA attack!";
+			break;
+		case 4:
+			eventMsg = "[username] just made a VOD";
+			break;
+		case 5:
+			eventMsg = "Securly crashed again...";
+			break;
+		case 6:
+			eventMsg = "MOD: Go to gamenight.wtf to play along!";
+			break;
+		case 7: 
+			var premAmount = Math.floor(Math.random() * 1001) + 100;
+			eventMsg = "Premium [username] donated $" + premAmount + "!";
+			donationsRaised += premAmount;
+			break;
+		case 8:
+			eventMsg = "Normie scum detected! Get out!";
+			break;
+		case 9:
+			eventMsg = "Covering our footprints...";
+			break;
+		case 10:
+			eventMsg = "Stalking new contestants...";
+			break;
+		case 11:
+			eventMsg = "Tossing out cookies!";
+			break;
+		case 12:
+			eventMsg = "Baking more cookies!";
+			break;
+		case 13: 
+			eventMsg = "Going iNcOGnItO!";
+			break;
+		case 14:
+			eventMsg = "Welcome to Season 5, Epis. 1!";
+			break;
+		case 15:
+			eventMsg = "GoodGuyBlocker™ dodged a DDoS uWu!"
+			break;
+	}
+	var feedChild = $("#feed").children();
+	if (feedChild.length >= 4){
+		feedChild.first().remove();
+	}
+	$("#feed").append("<li class='feedMessage event" + optNum +"''>" + eventMsg + "</li>");
+	$("#donationCtr").html("Donations: $" + donationsRaised);
+};
+	// limit to 5
+	// update screen
+
+
 
 $(document).ready(function(){
 	$(".resultBubble").hide();
@@ -50,12 +118,10 @@ $(document).ready(function(){
 	setInterval(function(){
 		viewers();
 	}, 4354);
+	setInterval(function(){
+		streamEvent();
+	}, Math.floor(Math.random()*20000) + 7000)
 });
-
-
-function streamEvent(){
-	console.log("Stream event posted");
-};
 
 
 
