@@ -32,9 +32,28 @@ $("#openPoll").click(function(){
 	name2 = $("#choice2").val();
 	name3 = $("#choice3").val();
 	socket.emit('sendChoices', name1, name2, name3);
+	$("#name1").html(name1 + ": ");
+	$("#name2").html(name2 + ": ");
+	$("#name3").html(name3 + ": ");
 	$("#choice1").val('');
 	$("#choice2").val('');
 	$("#choice3").val('');
+	$("#ch1Votes").html("0");
+	$("#ch2Votes").html("0");
+	$("#ch3Votes").html("0");
+});
+
+$("#closePoll").click(function(){
+	socket.emit('closePoll');
+});
+$("#showResults").click(function(){
+	socket.emit('showResults');
+});
+$("#hideResults").click(function(){
+	socket.emit('hideResults');
+});
+
+socket.on('pushChoices', function(name1, name2, name3){
 	$("#name1").html(name1 + ": ");
 	$("#name2").html(name2 + ": ");
 	$("#name3").html(name3 + ": ");
@@ -42,15 +61,6 @@ $("#openPoll").click(function(){
 	$("#ch2Votes").html("0");
 	$("#ch3Votes").html("0");
 });
-$("#closePoll").click(function(){
-	socket.emit('closePoll');
-})
-$("#showResults").click(function(){
-	socket.emit('showResults');
-})
-$("#hideResults").click(function(){
-	socket.emit('hideResults');
-})
 
 socket.on('vCounter1', function(ch1Votes){
 	$("#ch1Votes").html(ch1Votes);
@@ -69,5 +79,9 @@ $("#submitStalker").click(function(){
 
 $("#hideStalker").click(function(){
 	socket.emit('stalkerSend', 0);
-})
+});
+
+$("#toggleChat").click(function(){
+	socket.emit('toggleChat');
+});
 

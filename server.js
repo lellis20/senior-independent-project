@@ -98,6 +98,12 @@ io.on('connection', function(socket) {
 		socket.broadcast.emit('stalkerPush', img);
 	});
 
+	// Toggle Chat facilitation
+	socket.on('toggleChat', function(){
+		console.log("Chat toggled! Hope it wasn't too bad :|");
+		socket.broadcast.emit('chatToggleCommand');
+	});
+
 
 
 

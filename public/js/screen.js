@@ -13,7 +13,9 @@ var stalkerLinks = ["", // Default
 					"https://media.giphy.com/media/jqeqUuREGsjr1ocwPU/giphy.gif", // SamMain
 					"https://media.giphy.com/media/jpuay2nynuLgBXr1Nb/giphy.gif", // MaryMain
 					"https://media.giphy.com/media/XGVdSMd5SbhLNcVUHC/giphy.gif", //CalvinMain
-					"https://media.giphy.com/media/JOWeCyNUtp3qnn2WNB/giphy.gif" // Theo Ember Main
+					"https://media.giphy.com/media/JOWeCyNUtp3qnn2WNB/giphy.gif", // Theo Ember Main
+					"/static/AlicePic.jpg", // Alice picture
+					"/static/TrevorHusbandPic.jpg" // Calvin & Husband picture
 					]
 
 function spoofIP(){
@@ -43,18 +45,18 @@ function streamEvent(){
 	// Make donations BTC?
 	switch (optNum) {
 		case 1:
-			eventMsg = "[username] just subscribed!";
+			eventMsg = "New subscriber yipee!";
 			break;
 		case 2:
 			var amount = Math.floor(Math.random() * 50) + 1;
-			eventMsg = "[username] donated $" + amount + "!";
+			eventMsg = "[username] donated " + amount + " XTZ!";
 			donationsRaised += amount;
 			break;
 		case 3:
 			eventMsg = "GoodGuyBlocker™ prevented another CIA attack!";
 			break;
 		case 4:
-			eventMsg = "[username] just made a VOD";
+			eventMsg = "GameNightBot just made a VOD";
 			break;
 		case 5:
 			eventMsg = "Securly crashed again...";
@@ -64,7 +66,7 @@ function streamEvent(){
 			break;
 		case 7: 
 			var premAmount = Math.floor(Math.random() * 1001) + 100;
-			eventMsg = "Premium [username] donated $" + premAmount + "!";
+			eventMsg = "Premium SUB donated " + premAmount + " XTZ!";
 			donationsRaised += premAmount;
 			break;
 		case 8:
@@ -93,11 +95,11 @@ function streamEvent(){
 			break;
 	}
 	var feedChild = $("#feed").children();
-	if (feedChild.length >= 4){
+	if (feedChild.length >= 3){
 		feedChild.first().remove();
 	}
 	$("#feed").append("<li class='feedMessage event" + optNum +"''>" + eventMsg + "</li>");
-	$("#donationCtr").html("Donations: $" + donationsRaised);
+	$("#donationCtr").html("Donations: " + donationsRaised + " XTZ");
 };
 	// limit to 5
 	// update screen
@@ -238,7 +240,11 @@ socket.on('hideResultCommand', function(){
 });
 
 socket.on('stalkerPush', function(imgNum){
-	$(".stalkerBox").attr("src", stalkerLinks[imgNum])
+	$(".stalkerBox").attr("src", stalkerLinks[imgNum]);
+});
+
+socket.on('chatToggleCommand', function(){
+	$("#chat").toggle();
 });
 
 
