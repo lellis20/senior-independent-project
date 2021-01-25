@@ -5,4 +5,4 @@ As characters onstage needed to make decisions, the audience would vote and coll
 Uses node.js, socket.io, html, css, skeleton.css, javascript, jquery
 (Ignore the python) :)
 
-The website is no longer live to save server costs since the show is no longer running.
+The website is no longer live (or updated) to save server costs since the show is no longer running.
